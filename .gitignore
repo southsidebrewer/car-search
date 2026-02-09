@@ -1,0 +1,6 @@
+.env
+venv/
+data/crx_tracker.db
+data/*.xlsx
+__pycache__/
+*.pyc
