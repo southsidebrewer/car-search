@@ -43,6 +43,12 @@ def detect_inventory_url(base_url):
     try:
         resp = requests.get(clean_base, timeout=10, headers={"User-Agent":"Mozilla/5.0"})
         html = resp.text
+    signals = ["price", "vin", "stock", "mileage"]
+
+    if not any(s in html.lower() for s in signals):
+        print("Page does not contain vehicle listing signals.")
+        return None
+
         print(f"  Homepage status: {resp.status_code}")
     except Exception as e:
         print(f"  Failed to fetch homepage: {e}")
