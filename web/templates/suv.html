@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SUV Search</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f6f8; }
+        header { background: #111; color: white; padding: 15px 25px; }
+        .header-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+        .brand { font-size: 22px; font-weight: bold; margin: 0; justify-self: start; }
+        nav.main-nav { justify-self: center; display: flex; gap: 40px; }
+        .logout-wrap { justify-self: end; }
+        nav.main-nav a, .logout-wrap a { color: #bbb; text-decoration: none; font-weight: bold; transition: color 0.2s ease; }
+        nav.main-nav a:hover, .logout-wrap a:hover { color: #2c7be5; }
+        nav.main-nav a.active { color: #2c7be5; }
+
+        .container { padding: 30px; }
+        .card { background: white; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+        th, td { padding: 12px 10px; border-bottom: 1px solid #eee; text-align: left; font-size: 14px; }
+        th { background: #fafafa; font-weight: bold; }
+        tr:hover td { background: #fcfcff; }
+        .muted { color: #777; }
+        a.link { color: #2c7be5; text-decoration: none; font-weight: bold; }
+        a.link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-row">
+        <h1 class="brand">Car Search</h1>
+
+        <nav class="main-nav">
+            <a href="/">Dashboard</a>
+            <a href="/crx">CRX Search</a>
+            <a href="/suv" class="active">SUV Search</a>
+        </nav>
+
+        <div class="logout-wrap">
+            <a href="/login">Logout</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>2023+ SUV Results (≤40k miles, 250mi radius)</h2>
+        <p class="muted">Toyota, Nissan, Honda — Dealer inventory results will render here.</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Mileage</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th>Source</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="8" class="muted">No results yet.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

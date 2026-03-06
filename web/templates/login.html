@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Search Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .login-container {
+            text-align: center;
+        }
+
+        .brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            color: #1e7f3b; /* balanced green */
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        input[type="password"] {
+            width: 250px;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 250px;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #1e7f3b;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        button:hover {
+            background-color: #26a84a;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .error {
+            color: #ff4d4d;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="brand">Car Search</div>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post">
+            <input type="password" name="passcode" placeholder="Enter passcode" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
+EOF
