@@ -1,7 +1,7 @@
 import sqlite3
 from pathlib import Path
 
-db_path = Path("data/crx_tracker.db")
+db_path = Path("data/car_search.db")
 db_path.parent.mkdir(parents=True, exist_ok=True)
 
 conn = sqlite3.connect(db_path)
@@ -46,9 +46,22 @@ CREATE TABLE IF NOT EXISTS sales (
     sale_year INTEGER NOT NULL,
     sold_at DATETIME NOT NULL
 );
+CREATE TABLE IF NOT EXISTS suv_listings (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    source TEXT,
+    make TEXT,
+    model TEXT,
+    year INTEGER,
+    mileage INTEGER,
+    price INTEGER,
+    location TEXT,
+    link TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 """)
 
 conn.commit()
 conn.close()
 
-print("Database initialized at data/crx_tracker.db")
+print("Database initialized at data/car_search.db")
