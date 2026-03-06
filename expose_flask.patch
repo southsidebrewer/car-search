@@ -1,0 +1,14 @@
+diff --git a/web/app.py b/web/app.py
+index 0000000..1111111 100644
+--- a/web/app.py
++++ b/web/app.py
+@@ -11,8 +11,7 @@ app = Flask(__name__)
+ @app.route("/")
+ def index():
+     return "CRX tracker up"
+ 
+ if __name__ == "__main__":
+-    host = os.getenv("WEB_HOST", "127.0.0.1")
+     port = int(os.getenv("WEB_PORT", 1987))
+-    app.run(host=host, port=port)
++    app.run(host="0.0.0.0", port=port)
